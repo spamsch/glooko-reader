@@ -2,6 +2,8 @@
 
 Unofficial Python client for the [Glooko](https://www.glooko.com/) diabetes data platform. Retrieves insulin pump data (Omnipod 5), CGM readings, and statistics via Glooko's internal web API.
 
+> **Important: Glooko data is not real-time.** The Omnipod 5 app syncs data to Glooko periodically — typically once every few hours, and only when the phone has connectivity. This means bolus entries, IOB values, and pump mode data can lag behind actual pump activity by 1-4 hours. Do not rely on this library for time-critical insulin dosing decisions. It is best suited for retrospective analysis, trend monitoring, and enriching recommendation systems with historical pump context.
+
 **Note:** Glooko does not provide a public API. This library authenticates by replicating the browser login flow (CSRF token extraction, cookie-based sessions). It may break if Glooko changes their web application.
 
 ## Installation
